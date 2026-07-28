@@ -1,0 +1,25 @@
+[auth.email]
+# Allow unauthenticated users to sign up via email
+enable_signup = true
+
+# Double opt-in for email signups (set to false during testing)
+enable_confirmations = false
+
+# Rate limiting for email OTPs
+max_frequency = "1m0s"
+
+[auth.email.hash]
+algorithm = "argon2id"
+iterations = 192
+memory = 65536
+parallelism = 4
+
+[auth.session]
+# Session timeout (default: 1 week)
+timebox = "1w"
+
+# Enable PKCE flow for better security
+flow_type = "pkce"
+
+[auth.external]
+enabled = false
